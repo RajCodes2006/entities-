@@ -1,100 +1,46 @@
 {
-  "name": "Location",
+  "name": "PathRoute",
   "type": "object",
   "properties": {
-    "name": {
+    "from_location": {
       "type": "string",
-      "description": "Name of the location"
+      "description": "Starting location name"
     },
-    "category": {
+    "to_location": {
       "type": "string",
-      "enum": [
-        "academic",
-        "hostel",
-        "cafeteria",
-        "library",
-        "sports",
-        "admin",
-        "medical",
-        "landmark",
-        "entrance",
-        "shop",
-        "atm",
-        "stationary"
-      ],
-      "description": "Category of location"
+      "description": "Destination location name"
     },
-    "block_number": {
-      "type": "string",
-      "description": "Block or building number"
-    },
-    "description": {
-      "type": "string",
-      "description": "Details about this location"
-    },
-    "latitude": {
-      "type": "number",
-      "description": "Latitude coordinate"
-    },
-    "longitude": {
-      "type": "number",
-      "description": "Longitude coordinate"
-    },
-    "floor": {
-      "type": "string",
-      "description": "Floor number if applicable"
-    },
-    "facilities": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Available facilities"
-    },
-    "departments": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Departments in this building"
-    },
-    "contact_number": {
-      "type": "string",
-      "description": "Contact phone number"
-    },
-    "email": {
-      "type": "string",
-      "description": "Contact email"
-    },
-    "opening_hours": {
-      "type": "string",
-      "description": "Operating hours (e.g., '8:00 AM - 6:00 PM')"
-    },
-    "image_url": {
-      "type": "string",
-      "description": "Image URL for the location"
-    },
-    "current_crowd_level": {
-      "type": "string",
-      "enum": [
-        "low",
-        "medium",
-        "high"
-      ],
-      "default": "low",
-      "description": "Current crowd level"
-    },
-    "nearby_places": {
+    "path_coordinates": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string"
+          "lat": {
+            "type": "number"
           },
-          "distance": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
- 
+          "lng": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Array of coordinates defining the walking path"
+    },
+    "distance_meters": {
+      "type": "number",
+      "description": "Total distance in meters"
+    },
+    "estimated_time_minutes": {
+      "type": "number",
+      "description": "Estimated walking time in minutes"
+    },
+    "description": {
+      "type": "string",
+      "description": "Path description or landmarks"
+    }
+  },
+  "required": [
+    "from_location",
+    "to_location",
+    "path_coordinates"
+  ]
+}
