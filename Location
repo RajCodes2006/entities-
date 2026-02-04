@@ -1,0 +1,100 @@
+{
+  "name": "Location",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the location"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "academic",
+        "hostel",
+        "cafeteria",
+        "library",
+        "sports",
+        "admin",
+        "medical",
+        "landmark",
+        "entrance",
+        "shop",
+        "atm",
+        "stationary"
+      ],
+      "description": "Category of location"
+    },
+    "block_number": {
+      "type": "string",
+      "description": "Block or building number"
+    },
+    "description": {
+      "type": "string",
+      "description": "Details about this location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude coordinate"
+    },
+    "floor": {
+      "type": "string",
+      "description": "Floor number if applicable"
+    },
+    "facilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Available facilities"
+    },
+    "departments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Departments in this building"
+    },
+    "contact_number": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "opening_hours": {
+      "type": "string",
+      "description": "Operating hours (e.g., '8:00 AM - 6:00 PM')"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Image URL for the location"
+    },
+    "current_crowd_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "low",
+      "description": "Current crowd level"
+    },
+    "nearby_places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+ 
