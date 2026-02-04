@@ -43,4 +43,43 @@
       "description": "List of stops with multiple timings throughout the day"
     },
     "frequency": {
- 
+      "type": "string",
+      "description": "How often the shuttle runs (e.g., 'Every 30 minutes')"
+    },
+    "operating_hours": {
+      "type": "string",
+      "description": "Operating time range (e.g., '7:00 AM - 10:00 PM')"
+    },
+    "operating_days": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      },
+      "description": "Days when shuttle operates"
+    },
+    "total_distance_km": {
+      "type": "number",
+      "description": "Total route distance in kilometers"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether route is currently active"
+    }
+  },
+  "required": [
+    "route_name",
+    "route_number",
+    "stops",
+    "active"
+  ]
+}
