@@ -43,4 +43,28 @@
       "type": "string",
       "description": "Specific room number"
     },
- 
+    "instructor": {
+      "type": "string",
+      "description": "Professor or instructor name"
+    },
+    "class_type": {
+      "type": "string",
+      "enum": [
+        "lecture",
+        "lab",
+        "tutorial",
+        "practical"
+      ],
+      "description": "Type of class"
+    }
+  },
+  "required": [
+    "student_uid",
+    "day_of_week",
+    "start_time",
+    "end_time",
+    "subject_name",
+    "location_name",
+    "room_number"
+  ]
+}
