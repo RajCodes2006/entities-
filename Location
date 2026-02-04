@@ -97,4 +97,16 @@
           },
           "type": {
             "type": "string"
- 
+          }
+        }
+      },
+      "description": "Nearby shops, facilities, and points of interest"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "latitude",
+    "longitude"
+  ]
+}
