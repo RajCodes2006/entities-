@@ -1,0 +1,60 @@
+{
+  "name": "SupportTicket",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of user requesting support"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "navigation",
+        "shuttle",
+        "location_info",
+        "technical",
+        "other"
+      ],
+      "description": "Type of support needed"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Brief subject line"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the issue"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "in_progress",
+        "resolved",
+        "closed"
+      ],
+      "default": "open",
+      "description": "Current status"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "Priority level"
+    },
+    "admin_response": {
+      "type": "string",
+      "description": "Response from support team"
+    }
+  },
+  "required": [
+    "user_email",
+    "category",
+    "subject",
+    "description"
+  ]
+}
